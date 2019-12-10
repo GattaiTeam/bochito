@@ -1,8 +1,7 @@
-# flutteruiapp
+# Gattai App (Codename: Bochito)
 
-A new Flutter project.
+Flutter Project
 
 ## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+Follow the instructions in
+https://flutter.io/
