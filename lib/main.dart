@@ -3,7 +3,8 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'delayed_animation_signUpLogIn_screen.dart';
+import 'delayed_animation_signUpLogIn_screen.dart'; // Delayed animation for first screen (Log In and Sign up)
+
 
 void main() {
   SystemChrome.setEnabledSystemUIOverlays([]);
@@ -41,8 +42,13 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Color(0xff5b39c6),
-          body: Center(
+          //backgroundColor: Color(0xff5b39c6),
+        body: Container(
+          decoration: BoxDecoration(
+          gradient: LinearGradient(
+          colors: [Colors.purple, Colors.deepPurple])
+        ),
+          child: Center(
             child: Column(
               children: <Widget>[
                 AvatarGlow(
@@ -88,14 +94,14 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 ),
                 DelayedAnimation(
                   child: Text(
-                    "The app that lets you authenticate",
+                    "The only credential you need",
                     style: TextStyle(fontSize: 25.0, color: color),
                   ),
                   delay: delayedAmount + 3000,
                 ),
                 DelayedAnimation(
                   child: Text(
-                    "wherever you are!",
+                    "to access the world",
                     style: TextStyle(fontSize: 25.0, color: color),
                   ),
                   delay: delayedAmount + 3000,
@@ -143,8 +149,12 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
           // ),
           ),
-    );
+    ));
   }
+
+
+
+
 
   Widget get _signUpButton => Container(
         height: 60,
