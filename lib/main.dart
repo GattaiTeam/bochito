@@ -116,7 +116,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                   onTapUp: _onTapUp,
                   child: Transform.scale(
                     scale: _scale,
-                    child: _signUpButton,
+                    child: _logInButton,
                   ),
                 ),
                 delay: delayedAmount + 4000,
@@ -128,7 +128,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                     onTapUp: _onTapUp,
                     child: Transform.scale(
                       scale: _scale,
-                      child: _logInButton,
+                      child: _signUpButton,
                     ),
                   ),
                   delay: delayedAmount + 5000,
@@ -157,7 +157,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
 
 
-  Widget get _signUpButton => Container(
+  Widget get _logInButton => Container(
         height: 60,
         width: 270,
         decoration: BoxDecoration(
@@ -166,7 +166,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         ),
         child: Center(
           child: Text(
-            'Hello Gattai!',
+            'Log In',
             style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
@@ -176,7 +176,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         ),
       );
 
-  Widget get _logInButton => Container(
+  Widget get _signUpButton => Container(
     height: 60,
     width: 270,
     decoration: BoxDecoration(
@@ -185,7 +185,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     ),
     child: Center(
       child: Text(
-        'I am already part of Gattai!',
+        'Sign Up',
         style: TextStyle(
           fontSize: 20.0,
           fontWeight: FontWeight.bold,
