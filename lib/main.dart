@@ -49,8 +49,11 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Colors.purple, Colors.deepPurple])
+          stops: [0.1,0.4,0.6,0.9],
+          colors: [Colors.indigo, Colors.indigoAccent, Colors.blue, Colors.lightBlue])
+            //colors: [Colors.purple, Colors.indigoAccent, Colors.deepPurpleAccent, Colors.purple])
         ),
+
           child: Center(
             child: Column(
               children: <Widget>[
