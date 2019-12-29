@@ -56,7 +56,11 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
           child: Center(
             child: Column(
+
               children: <Widget>[
+                SizedBox(
+                  height: 30.0,
+                ),
                 AvatarGlow(
                   endRadius: 90,
                   duration: Duration(seconds: 2),
@@ -64,16 +68,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                   repeat: true,
                   repeatPauseDuration: Duration(seconds: 2),
                   startDelay: Duration(seconds: 1),
-                  child: Material(
-                      elevation: 8.0,
-                      shape: CircleBorder(),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.grey[100],
-                        child: FlutterLogo(
-                          size: 50.0,
-                        ),
-                        radius: 50.0,
-                      )),
+                  child: Image.asset('assets/images/gattai_logo_white.png')
                 ),
                 DelayedAnimation(
                   child: Text(
@@ -87,7 +82,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 ),
                 DelayedAnimation(
                   child: Text(
-                    "Gattai!",
+                    "a borderless adventure!",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 35.0,
