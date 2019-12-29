@@ -42,10 +42,13 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          //backgroundColor: Color(0xff5b39c6),
+        //backgroundColor: Color(0xff5b39c6),
+        //Container that adds the gradient color to the background of the app
         body: Container(
           decoration: BoxDecoration(
           gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
           colors: [Colors.purple, Colors.deepPurple])
         ),
           child: Center(
