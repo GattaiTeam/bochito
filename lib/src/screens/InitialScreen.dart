@@ -33,6 +33,8 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
 
+    const primaryColorBar = const Color(0xFF717DBC);
+
     final color = Colors.white;
     _scale = 1 - _controller.value;
     final gradientBackgroundStops = [0.1,0.4,0.6,0.9]; // Used to create the gradient background
@@ -40,6 +42,10 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
 
     return MaterialApp(
+        title: 'Gattai',
+        theme: ThemeData(
+          primaryColor: primaryColorBar,
+        ),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: Container(
