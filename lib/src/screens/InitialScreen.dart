@@ -2,7 +2,7 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:gattai/src/algorithms/delayed_animation_signUpLogIn_screen.dart'; /* Delayed animation for first screen (Log In and Sign up)*/
 import 'package:gattai/src/widgets/LogIn_Button.dart';
-
+import 'package:gattai/src/widgets/SignUp_Button.dart';
 
 
 class MyApp extends StatefulWidget {
@@ -122,7 +122,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                         onTapUp: _onTapUp,
                         child: Transform.scale(
                           scale: _scale,
-                          child: _signUpButton,
+                          child: SignUpButton(),
                         ),
                       ),
                       delay: delayedAmount + 5000,
@@ -140,24 +140,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
 
 
-  Widget get _signUpButton => Container(
-    height: 60,
-    width: 270,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(100.0),
-      color: Colors.white,
-    ),
-    child: Center(
-      child: Text(
-        'Sign Up',
-        style: TextStyle(
-          fontSize: 20.0,
-          fontWeight: FontWeight.bold,
-          color: Color(0xFF8185E2),
-        ),
-      ),
-    ),
-  );
+
 
   void _onTapDown(TapDownDetails details) {
     _controller.forward();
