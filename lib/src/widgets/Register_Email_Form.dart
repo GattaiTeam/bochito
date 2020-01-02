@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gattai/src/screens/Register_ScanDocument.dart';
 
 class EmailForm extends StatefulWidget{
   @override
@@ -38,19 +39,35 @@ class EmailFormState extends State<EmailForm>{
               ,
             ),
           ),
-          RaisedButton(
-            onPressed: (){
-              if (_formKey.currentState.validate()){
-                print("Test");
-                Scaffold
-                    .of(context)
-                    .showSnackBar(SnackBar(content: Text('Processing Data')));
-              }else{
-                print("Did not work");
-              }
-            },
-            child: Text('Next'),
+          SizedBox(
+            height: 15.0,
+          ),
+          Container(
+            height: 50.0,
+            width: 200.0,
+
+            child:           RaisedButton(
+              color: Color(0xFF717DBC),
+              textTheme: ButtonTextTheme.primary,
+              shape: RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(18.0),
+                side: BorderSide(color: Colors.indigo),
+
+              ),
+              onPressed: (){
+                if (_formKey.currentState.validate()){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScanDocument()));
+                }
+
+              },
+              child: Text('Next',
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.white
+              ),),
+            ),
           )
+
         ],
       )
     );
