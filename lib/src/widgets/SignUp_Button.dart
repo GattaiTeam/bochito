@@ -1,4 +1,7 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:gattai/src/screens/signUp_Email.dart';
 
 
 class SignUpButton extends StatelessWidget {
@@ -22,11 +25,12 @@ class SignUpButton extends StatelessWidget {
               )
           ),
           onPressed: () {
-            print("Pressed Sign Up");
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp_Email()));
           }
           ,
         ),
       ),
     );
   }
+
 }

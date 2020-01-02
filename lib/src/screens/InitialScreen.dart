@@ -31,21 +31,24 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+
     final color = Colors.white;
     _scale = 1 - _controller.value;
+    final gradientBackgroundStops = [0.1,0.4,0.6,0.9]; // Used to create the gradient background
+    final gradientBackgroundColors = [Colors.indigo, Colors.indigoAccent, Colors.blue, Colors.lightBlue]; //
+
+
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          //backgroundColor: Color(0xff5b39c6),
-          //Container that adds the gradient color to the background of the app
           body: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
-                      stops: [0.1,0.4,0.6,0.9],
-                      colors: [Colors.indigo, Colors.indigoAccent, Colors.blue, Colors.lightBlue])
-                //colors: [Colors.purple, Colors.indigoAccent, Colors.deepPurpleAccent, Colors.purple])
+                      stops: gradientBackgroundStops,
+                      colors: gradientBackgroundColors)
+
               ),
 
               child: Center(
@@ -135,18 +138,21 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   }
 
 
-
-
-
-
-
-
-
   void _onTapDown(TapDownDetails details) {
     _controller.forward();
+
   }
 
   void _onTapUp(TapUpDetails details) {
     _controller.reverse();
   }
+
+
+
 }
+
+
+
+
+
+
