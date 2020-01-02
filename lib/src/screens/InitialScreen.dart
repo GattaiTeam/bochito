@@ -1,6 +1,7 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:gattai/src/algorithms/delayed_animation_signUpLogIn_screen.dart'; /* Delayed animation for first screen (Log In and Sign up)*/
+import 'package:gattai/src/widgets/GattaiLogo.dart';
 import 'package:gattai/src/widgets/LogIn_Button.dart';
 import 'package:gattai/src/widgets/SignUp_Button.dart';
 
@@ -65,7 +66,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                         repeat: true,
                         repeatPauseDuration: Duration(seconds: 2),
                         startDelay: Duration(seconds: 1),
-                        child: Image.asset('assets/images/gattai_logo_white.png')
+                        child: GattaiLogo()
                     ),
                     DelayedAnimation(
                       child: Text(
