@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class EmailForm extends StatefulWidget{
   @override
@@ -18,11 +19,23 @@ class EmailFormState extends State<EmailForm>{
       child: Column(
         children: <Widget>[
           Container(
-            width: 300.0,
+            width: 320.0,
             child: TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+                fillColor: Colors.white,
+                hintText: 'example@gatt.ai',
+                labelText: 'Please enter your email address',
+                prefixIcon: Icon(Icons.email),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                  borderSide: BorderSide()
+                ),
+                contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0)),
               validator: (value){
                 return validateEmail(value);
-              },
+              }
+              ,
             ),
           ),
           RaisedButton(

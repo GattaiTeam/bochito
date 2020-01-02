@@ -9,11 +9,14 @@ class SignUpEmail extends StatelessWidget{
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Second Route"),
+        title: Center(child: Text("Let's get started!")),
       ),
       body: Center(
         child: Column(
           children: <Widget>[
+            SizedBox(
+              height: 30.0,
+            ),
             EmailForm(),
           ],
         ),
