@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_country_picker/flutter_country_picker.dart';
 
-class CountrySelection extends State<StatefulWidget>{
+class CountrySelector extends State<StatefulWidget>{
 
   Country _selected;
 

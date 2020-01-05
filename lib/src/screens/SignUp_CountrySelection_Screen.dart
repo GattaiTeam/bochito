@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gattai/src/screens/Register_ScanDocument.dart';
-import 'package:gattai/src/widgets/CountrySelection.dart';
+import 'package:gattai/src/screens/SignUp_ScanDocument_Screen.dart';
+import 'package:gattai/src/widgets/SignUp_CountrySelector.dart';
 
 class SignUpCountry extends StatelessWidget{
   @override
@@ -78,6 +78,6 @@ class SignUpCountry extends StatelessWidget{
 
 class CountrySelectionWidget extends StatefulWidget {
   @override
-  CountrySelection createState() => CountrySelection();
+  CountrySelector createState() => CountrySelector();
 }
 

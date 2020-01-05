@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gattai/src/screens/Register_CountrySelection.dart';
+import 'package:gattai/src/screens/SignUp_CountrySelection_Screen.dart';
 
 class EmailForm extends StatefulWidget{
   @override

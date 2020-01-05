@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gattai/src/widgets/Register_Email_Form.dart';
+import 'package:gattai/src/widgets/SignUp_EmailForm.dart';
 
 class SignUpEmail extends StatelessWidget{
   @override
