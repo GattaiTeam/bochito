@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gattai/src/screens/Register_ScanDocument.dart';
+import 'package:gattai/src/screens/Register_CountrySelection.dart';
 
 class EmailForm extends StatefulWidget{
   @override
@@ -56,7 +56,7 @@ class EmailFormState extends State<EmailForm>{
               ),
               onPressed: (){
                 if (_formKey.currentState.validate()){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScanDocument()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpCountry()));
                 }
 
               },

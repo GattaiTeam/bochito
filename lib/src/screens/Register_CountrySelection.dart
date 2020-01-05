@@ -1,0 +1,83 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:gattai/src/screens/Register_ScanDocument.dart';
+import 'package:gattai/src/widgets/CountrySelection.dart';
+
+class SignUpCountry extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Center(child: Text("Select your country")),
+        ),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 30.0,
+              ),
+              Text('What is your residence',
+                style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Roboto mono sample',
+                  fontStyle: FontStyle.italic,
+                  fontSize: 35),
+              )
+              ,
+              Text('country?',
+                style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontStyle: FontStyle.italic,
+                    fontFamily: 'Roboto mono sample',
+                    fontSize: 35),
+              ),
+
+              SizedBox(
+                height: 70.0,
+              ),
+              CountrySelectionWidget(),
+
+              SizedBox(
+                height: 70.0,
+              ),
+              Container(
+                height: 50.0,
+                width: 200.0,
+
+                child:           RaisedButton(
+                  color: Color(0xFF717DBC),
+                  textTheme: ButtonTextTheme.primary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.indigo),
+
+                  ),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScanDocument()));
+
+                  },
+                  child: Text('Next',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.white
+                    ),),
+                ),
+              )
+
+
+
+            ],
+          ),
+        )
+    );
+  }
+
+
+}
+
+class CountrySelectionWidget extends StatefulWidget {
+  @override
+  CountrySelection createState() => CountrySelection();
+}
+
