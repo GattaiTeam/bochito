@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gattai/src/screens/SignUp_ScanDocument_Screen.dart';
+import 'package:gattai/src/screens/SignUp_EIDProvider.dart';
 import 'package:gattai/src/widgets/SignUp_CountrySelector.dart';
 
 class SignUpCountry extends StatelessWidget{
@@ -12,63 +12,76 @@ class SignUpCountry extends StatelessWidget{
           title: Center(child: Text("Select your country")),
         ),
         body: Center(
-          child: Column(
+          child:ListView(
             children: <Widget>[
-              SizedBox(
-                height: 30.0,
-              ),
-              Text('What is your residence',
-                style: TextStyle(
-                  fontWeight: FontWeight.w300,
-                  fontFamily: 'Roboto mono sample',
-                  fontStyle: FontStyle.italic,
-                  fontSize: 35),
-              )
-              ,
-              Text('country?',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontStyle: FontStyle.italic,
-                    fontFamily: 'Roboto mono sample',
-                    fontSize: 35),
-              ),
-
-              SizedBox(
-                height: 70.0,
-              ),
-              CountrySelectionWidget(),
-
-              SizedBox(
-                height: 70.0,
-              ),
-              Container(
-                height: 50.0,
-                width: 200.0,
-
-                child:           RaisedButton(
-                  color: Color(0xFF717DBC),
-                  textTheme: ButtonTextTheme.primary,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(18.0),
-                    side: BorderSide(color: Colors.indigo),
-
+              Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 30.0,
                   ),
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScanDocument()));
-
-                  },
-                  child: Text('Next',
+                  Text('What is your residence',
                     style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.white
-                    ),),
-                ),
-              )
+                        fontWeight: FontWeight.w300,
+                        fontFamily: 'Roboto mono sample',
+                        fontStyle: FontStyle.italic,
+                        fontSize: 35),
+                  )
+                  ,
+                  Text('country?',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w300,
+                        fontStyle: FontStyle.italic,
+                        fontFamily: 'Roboto mono sample',
+                        fontSize: 35),
+                  ),
+
+
+                  SizedBox(
+                    height: 20.0,
+                  ),
+
+
+                  Image.asset('assets/images/select_language.png',
+                  height: 200,),
+
+                  SizedBox(
+                    height: 30.0,
+                  ),
 
 
 
+                  CountrySelectionWidget(),
+
+                  SizedBox(
+                    height: 70.0,
+                  ),
+                  Container(
+                    height: 50.0,
+                    width: 200.0,
+
+                    child:           RaisedButton(
+                      color: Color(0xFF717DBC),
+                      textTheme: ButtonTextTheme.primary,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(18.0),
+                        side: BorderSide(color: Colors.indigo),
+
+                      ),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpEIDProvider()));
+
+                      },
+                      child: Text('Next',
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white
+                        ),),
+                    ),
+                  )
+                ],
+              ),
             ],
-          ),
+          )
         )
     );
   }

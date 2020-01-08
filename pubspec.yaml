@@ -26,6 +26,7 @@ dependencies:
   avatar_glow:
   provider: ^4.0.1
   flutter_country_picker: ^0.1.6
+  flutter_staggered_animations: ^0.1.2
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +45,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/estonian_eproviders/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
