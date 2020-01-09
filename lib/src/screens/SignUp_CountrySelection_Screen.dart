@@ -41,7 +41,7 @@ class SignUpCountry extends StatelessWidget{
                   ),
 
 
-                  Image.asset('assets/images/select_language.png',
+                  Image.asset('assets/images/country_pet.png',
                   height: 200,),
 
                   SizedBox(

@@ -14,7 +14,12 @@ class SignUpEmail extends StatelessWidget{
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: 30.0,
+              height: 10.0,
+            ),
+            Image.asset('assets/images/email_image.png',
+              height: 150,),
+            SizedBox(
+              height: 20.0,
             ),
             EmailForm(),
           ],

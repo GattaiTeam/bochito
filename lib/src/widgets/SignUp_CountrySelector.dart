@@ -15,7 +15,7 @@ class CountrySelector extends State<StatefulWidget>{
           showDialingCode: false, //displays dialing code, false by default
           showName: true, //displays country name, true by default
           showCurrency: false, //eg. 'British pound'
-          showCurrencyISO: false, //eg. 'GBP'
+          showCurrencyISO: false, //eg. 'GBP',
           nameTextStyle: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.w300,

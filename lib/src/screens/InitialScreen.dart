@@ -59,84 +59,89 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
               ),
 
               child: Center(
-                child: Column(
+                child: ListView(
 
                   children: <Widget>[
-                    SizedBox(
-                      height: 30.0,
-                    ),
-                    AvatarGlow(
-                        endRadius: 90,
-                        duration: Duration(seconds: 2),
-                        glowColor: Colors.white24,
-                        repeat: true,
-                        repeatPauseDuration: Duration(seconds: 2),
-                        startDelay: Duration(seconds: 1),
-                        child: GattaiLogo()
-                    ),
-                    DelayedAnimation(
-                      child: Text(
-                        "Welcome to",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 35.0,
-                            color: color),
-                      ),
-                      delay: delayedAmount + 1000,
-                    ),
-                    DelayedAnimation(
-                      child: Text(
-                        "a borderless adventure!",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 35.0,
-                            color: color),
-                      ),
-                      delay: delayedAmount + 2000,
-                    ),
-                    SizedBox(
-                      height: 30.0,
-                    ),
-                    DelayedAnimation(
-                      child: Text(
-                        "The only credential you need",
-                        style: TextStyle(fontSize: 25.0, color: color),
-                      ),
-                      delay: delayedAmount + 3000,
-                    ),
-                    DelayedAnimation(
-                      child: Text(
-                        "to access the world",
-                        style: TextStyle(fontSize: 25.0, color: color),
-                      ),
-                      delay: delayedAmount + 3000,
-                    ),
-                    SizedBox(
-                      height: 70.0,
-                    ),
-                    DelayedAnimation(
-                      child: GestureDetector(
-                        onTapDown: _onTapDown,
-                        onTapUp: _onTapUp,
-                        child: Transform.scale(
-                          scale: _scale,
-                          child: LogInButton(),
+                    Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 30.0,
                         ),
-                      ),
-                      delay: delayedAmount + 4000,
-                    ),
-                    SizedBox(height: 20.0,),
-                    DelayedAnimation(
-                      child: GestureDetector(
-                        onTapDown: _onTapDown,
-                        onTapUp: _onTapUp,
-                        child: Transform.scale(
-                          scale: _scale,
-                          child: SignUpButton(),
+                        AvatarGlow(
+                            endRadius: 90,
+                            duration: Duration(seconds: 2),
+                            glowColor: Colors.white24,
+                            repeat: true,
+                            repeatPauseDuration: Duration(seconds: 2),
+                            startDelay: Duration(seconds: 1),
+                            child: GattaiLogo()
                         ),
-                      ),
-                      delay: delayedAmount + 5000,
-                    ),
+                        DelayedAnimation(
+                          child: Text(
+                            "Welcome to",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 35.0,
+                                color: color),
+                          ),
+                          delay: delayedAmount + 1000,
+                        ),
+                        DelayedAnimation(
+                          child: Text(
+                            "a borderless adventure!",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 35.0,
+                                color: color),
+                          ),
+                          delay: delayedAmount + 2000,
+                        ),
+                        SizedBox(
+                          height: 30.0,
+                        ),
+                        DelayedAnimation(
+                          child: Text(
+                            "The only credential you need",
+                            style: TextStyle(fontSize: 25.0, color: color),
+                          ),
+                          delay: delayedAmount + 3000,
+                        ),
+                        DelayedAnimation(
+                          child: Text(
+                            "to access the world",
+                            style: TextStyle(fontSize: 25.0, color: color),
+                          ),
+                          delay: delayedAmount + 3000,
+                        ),
+                        SizedBox(
+                          height: 70.0,
+                        ),
+                        DelayedAnimation(
+                          child: GestureDetector(
+                            onTapDown: _onTapDown,
+                            onTapUp: _onTapUp,
+                            child: Transform.scale(
+                              scale: _scale,
+                              child: LogInButton(),
+                            ),
+                          ),
+                          delay: delayedAmount + 4000,
+                        ),
+                        SizedBox(height: 20.0,),
+                        DelayedAnimation(
+                          child: GestureDetector(
+                            onTapDown: _onTapDown,
+                            onTapUp: _onTapUp,
+                            child: Transform.scale(
+                              scale: _scale,
+                              child: SignUpButton(),
+                            ),
+                          ),
+                          delay: delayedAmount + 5000,
+                        ),
+                      ],
+                    )
+
                   ],
                 ),
               )
