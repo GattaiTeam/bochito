@@ -4,9 +4,16 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gattai/src/screens/SignUp_ScanDocument_Screen.dart';
 
 class SignUpEIDProvider extends StatelessWidget{
+  int _numberOfProviders = 3;
   @override
   Widget build(BuildContext context) {
-    int columnCount = 3;
+    int columnCount = 2;
+    // numberOfproviders will be updated depending on the country, for now its hard-coded
+    // but this is business logic, probably a request to a JSON with the number of providers
+    // depending on the country
+
+
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -16,7 +23,7 @@ class SignUpEIDProvider extends StatelessWidget{
             child: GridView.count(
               crossAxisCount: columnCount,
               children: List.generate(
-                3, (int index) {
+                _numberOfProviders+1, (int index) {
                 return AnimationConfiguration.staggeredGrid(
                   position: index,
                   duration: const Duration(milliseconds: 200),
@@ -38,38 +45,73 @@ class SignUpEIDProvider extends StatelessWidget{
 
 
   gridViewChildren(index,context){
-    String imageRoute = 'assets/images/estonian_eproviders/estonian_$index.png';
     List<String>providerList = ['Smart-ID', 'LHV', "TransferWise"];
-    print(imageRoute);
-    return Column(
-      children: <Widget>[
-        Container(child: Expanded(
-          child: Container(
-            child: ConstrainedBox(
-              constraints: BoxConstraints.expand(),
-              child: IconButton(
-                icon: Image.asset(imageRoute),
-                iconSize: 50,
-                onPressed: () {
-                  obtainEProviderInformation(context);
-                },
-              )
+
+    if (index == _numberOfProviders){ // Non-Existent provider the user can show
+      return Column(
+        children: <Widget>[
+          Container(child: Expanded(
+            child: Container(
+              child: ConstrainedBox(
+                  constraints: BoxConstraints.expand(),
+                  child: IconButton(
+                    icon: Image.asset('assets/images/AddIcon.png'),
+                    iconSize: 50,
+                    onPressed: () {
+                      obtainEProviderInformation(context);
+                    },
+                  )
+              ),
             ),
           ),
-        ),
-        ),
-        Text(providerList[index],
-        style: TextStyle(
-          fontSize: 20,
-          fontFamily: 'RobotoMono'
+          ),
+          Center(
+            child: Text('My E-Provider is not shown',
+              style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'Roboto'
+              ),
+            ),
+          )
+        ],
+      );
 
-        ),),
+    }
 
-        Center(
+    else{
+      String imageRoute = 'assets/images/estonian_eproviders/estonian_$index.png';
+      return Column(
+        children: <Widget>[
+          Container(child: Expanded(
+            child: Container(
+              child: ConstrainedBox(
+                  constraints: BoxConstraints.expand(),
+                  child: IconButton(
+                    icon: Image.asset(imageRoute),
+                    iconSize: 50,
+                    onPressed: () {
+                      proceedToScan(context);
+                    },
+                  )
+              ),
+            ),
+          ),
+          ),
+          Text(providerList[index],
+            style: TextStyle(
+                fontSize: 20,
+                fontFamily: 'Roboto'
 
-        )
-      ],
-    );
+            ),
+          ),
+
+        ],
+      );
+    }
+
+
+
+
   }
 
 
@@ -94,7 +136,7 @@ class SignUpEIDProvider extends StatelessWidget{
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: Text("This feature is still being developed"),
+      title: Text("Signing up with your E-Provider is currently under development"),
       content: Text("Press Continue to proceed with the sign up process"),
       actions: [
         cancelButton,
@@ -124,6 +166,13 @@ class SignUpEIDProvider extends StatelessWidget{
               borderSide: BorderSide()
           ),
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0)),
+          validator: (value){
+            if (value.isEmpty){
+              return "You must type your E-ID Provider";
+            }else{
+              return null;
+            }
+          },
     );
 
     Widget okButton = FlatButton(
@@ -143,7 +192,7 @@ class SignUpEIDProvider extends StatelessWidget{
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
       title: Text("Please tell us who is your E-Provider, so we may include it the next time"
-          "you log in Gattai"),
+          " you log in with Gattai"),
       content: newEProvider,
       actions: [
         cancelButton,
