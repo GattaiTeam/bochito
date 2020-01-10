@@ -45,8 +45,6 @@ class SignUpEIDProvider extends StatelessWidget{
 
 
   gridViewChildren(index,context){
-    List<String>providerList = ['Smart-ID', 'LHV', "TransferWise"];
-
     if (index == _numberOfProviders){ // Non-Existent provider the user can show
       return Column(
         children: <Widget>[
@@ -55,7 +53,7 @@ class SignUpEIDProvider extends StatelessWidget{
               child: ConstrainedBox(
                   constraints: BoxConstraints.expand(),
                   child: IconButton(
-                    icon: Image.asset('assets/images/AddIcon.png'),
+                    icon: Image.asset('assets/images/AddProvider.png'),
                     iconSize: 50,
                     onPressed: () {
                       obtainEProviderInformation(context);
@@ -65,14 +63,6 @@ class SignUpEIDProvider extends StatelessWidget{
             ),
           ),
           ),
-          Center(
-            child: Text('My E-Provider is not shown',
-              style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'Roboto'
-              ),
-            ),
-          )
         ],
       );
 
@@ -97,14 +87,6 @@ class SignUpEIDProvider extends StatelessWidget{
             ),
           ),
           ),
-          Text(providerList[index],
-            style: TextStyle(
-                fontSize: 20,
-                fontFamily: 'Roboto'
-
-            ),
-          ),
-
         ],
       );
     }
