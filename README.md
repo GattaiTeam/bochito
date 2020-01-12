@@ -12,7 +12,10 @@ https://flutter.io/
 	- Modify the screen boundaries to work with any screen Iphone / Android phones
 	- Change the colors of the Sign up / Log in to be more intuitive for the user
 	
-- Log in and Sign up Flow
+- Sign up Flow
+	- Add Camera to E-Providers 1/2 scans depending
+	
+	
 
 
 

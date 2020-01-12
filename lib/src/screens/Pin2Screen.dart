@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gattai/src/widgets/LogIn_Button.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
 
