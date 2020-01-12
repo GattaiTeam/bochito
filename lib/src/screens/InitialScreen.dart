@@ -60,7 +60,6 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
               child: Center(
                 child: ListView(
-
                   children: <Widget>[
                     Column(
                       children: <Widget>[

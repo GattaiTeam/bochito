@@ -6,6 +6,7 @@ class SignUpEmail extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Center(child: Text("Let's get started!")),

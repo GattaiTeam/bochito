@@ -49,7 +49,6 @@ class SignUpCountry extends StatelessWidget{
                   ),
 
 
-
                   CountrySelectionWidget(),
 
                   SizedBox(
@@ -59,7 +58,7 @@ class SignUpCountry extends StatelessWidget{
                     height: 50.0,
                     width: 200.0,
 
-                    child:           RaisedButton(
+                    child:  RaisedButton(
                       color: Color(0xFF717DBC),
                       textTheme: ButtonTextTheme.primary,
                       shape: RoundedRectangleBorder(

@@ -58,7 +58,6 @@ class EmailFormState extends State<EmailForm>{
                 if (_formKey.currentState.validate()){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpCountry()));
                 }
-
               },
               child: Text('Next',
               style: TextStyle(

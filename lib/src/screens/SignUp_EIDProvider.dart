@@ -4,15 +4,13 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gattai/src/screens/SignUp_ScanDocument_Screen.dart';
 
 class SignUpEIDProvider extends StatelessWidget{
-  int _numberOfProviders = 3;
+  int _numberOfProviders = 4;
   @override
   Widget build(BuildContext context) {
     int columnCount = 2;
     // numberOfproviders will be updated depending on the country, for now its hard-coded
     // but this is business logic, probably a request to a JSON with the number of providers
     // depending on the country
-
-
 
     return Scaffold(
       backgroundColor: Colors.white,
