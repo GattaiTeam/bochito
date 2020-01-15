@@ -45,7 +45,6 @@ class EmailFormState extends State<EmailForm>{
           Container(
             height: 50.0,
             width: 200.0,
-
             child:           RaisedButton(
               color: Color(0xFF717DBC),
               textTheme: ButtonTextTheme.primary,

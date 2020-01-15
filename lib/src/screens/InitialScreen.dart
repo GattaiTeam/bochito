@@ -41,12 +41,32 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     final gradientBackgroundColors = [Colors.indigo, Colors.indigoAccent, Colors.blue, Colors.lightBlue]; //
 
 
+
     return MaterialApp(
         title: 'Gattai',
         theme: ThemeData(
           primaryColor: primaryColorBar,
+            textTheme: TextTheme(
+              button: TextStyle(
+                fontSize: 20.0,
+                color: Colors.white,
+
+              )
+            ),
+            buttonTheme: ButtonThemeData(
+              height: 50,
+              minWidth: 200,
+              textTheme: ButtonTextTheme.primary,
+              buttonColor: Color(0xFF717DBC),
+              shape: RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(18.0),
+                side: BorderSide(color: Colors.indigo),
+              ),
+            )
         ),
         debugShowCheckedModeBanner: false,
+
+
         home: Scaffold(
           body: Container(
               decoration: BoxDecoration(

@@ -13,6 +13,9 @@ class LogInButton extends StatelessWidget {
       ),
       child: Center(
         child: FlatButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(0),
+          ),
           child: Text('Log In',
               style: TextStyle(
                 fontSize: 20.0,

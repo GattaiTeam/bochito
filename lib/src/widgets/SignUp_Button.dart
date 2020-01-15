@@ -16,6 +16,9 @@ class SignUpButton extends StatelessWidget {
       ),
       child: Center(
         child: FlatButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(0),
+          ),
           child: Text(
               'Sign Up',
               style: TextStyle(

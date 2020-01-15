@@ -49,6 +49,10 @@ class LoginEmail extends StatelessWidget{
                       autofocus: true,
                       onEditingComplete: () { submit(); },
                     ),
+                    SizedBox(
+                      height: 25.0,
+                    ),
+
                     RaisedButton(
                       onPressed: () { submit(); },
                       child: Text('Continue'),
