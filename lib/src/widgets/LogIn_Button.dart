@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gattai/src/screens/Login_Email.dart';
 
 class LogInButton extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class LogInButton extends StatelessWidget {
                 color: Color(0xFF8185E2),
               )),
           onPressed: () {
-            //
+            Navigator.push(context, MaterialPageRoute(builder: (context) => LoginEmail()));
           },
         ),
       ),

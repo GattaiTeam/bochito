@@ -1,6 +1,9 @@
+import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
-import 'package:gattai/src/screens/RegisterScreen.dart';
-import 'package:gattai/src/screens/LoginScreen.dart';
+import 'package:gattai/src/algorithms/delayed_animation_signUpLogIn_screen.dart'; /* Delayed animation for first screen (Log In and Sign up)*/
+import 'package:gattai/src/widgets/GattaiLogo.dart';
+import 'package:gattai/src/widgets/LogIn_Button.dart';
+import 'package:gattai/src/widgets/SignUp_Button.dart';
 
 
 class MyApp extends StatefulWidget {
@@ -34,6 +37,8 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
     final color = Colors.white;
     _scale = 1 - _controller.value;
+    final gradientBackgroundStops = [0.1,0.4,0.6,0.9]; // Used to create the gradient background
+    final gradientBackgroundColors = [Colors.indigo, Colors.indigoAccent, Colors.blue, Colors.lightBlue]; //
 
 
     return MaterialApp(
@@ -42,8 +47,107 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           primaryColor: primaryColorBar,
         ),
         debugShowCheckedModeBanner: false,
-        home: HomeScreen());
+        home: Scaffold(
+          body: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      stops: gradientBackgroundStops,
+                      colors: gradientBackgroundColors)
+
+              ),
+
+              child: Center(
+                child: ListView(
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 30.0,
+                        ),
+                        AvatarGlow(
+                            endRadius: 90,
+                            duration: Duration(seconds: 2),
+                            glowColor: Colors.white24,
+                            repeat: true,
+                            repeatPauseDuration: Duration(seconds: 2),
+                            startDelay: Duration(seconds: 1),
+                            child: GattaiLogo()
+                        ),
+                        DelayedAnimation(
+                          child: Text(
+                            "Welcome to",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 35.0,
+                                color: color),
+                          ),
+                          delay: delayedAmount + 1000,
+                        ),
+                        DelayedAnimation(
+                          child: Text(
+                            "a borderless adventure!",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 35.0,
+                                color: color),
+                          ),
+                          delay: delayedAmount + 2000,
+                        ),
+                        SizedBox(
+                          height: 30.0,
+                        ),
+                        DelayedAnimation(
+                          child: Text(
+                            "The only credential you need",
+                            style: TextStyle(fontSize: 25.0, color: color),
+                          ),
+                          delay: delayedAmount + 3000,
+                        ),
+                        DelayedAnimation(
+                          child: Text(
+                            "to access the world",
+                            style: TextStyle(fontSize: 25.0, color: color),
+                          ),
+                          delay: delayedAmount + 3000,
+                        ),
+                        SizedBox(
+                          height: 70.0,
+                        ),
+                        DelayedAnimation(
+                          child: GestureDetector(
+                            onTapDown: _onTapDown,
+                            onTapUp: _onTapUp,
+                            child: Transform.scale(
+                              scale: _scale,
+                              child: LogInButton(),
+                            ),
+                          ),
+                          delay: delayedAmount + 4000,
+                        ),
+                        SizedBox(height: 20.0,),
+                        DelayedAnimation(
+                          child: GestureDetector(
+                            onTapDown: _onTapDown,
+                            onTapUp: _onTapUp,
+                            child: Transform.scale(
+                              scale: _scale,
+                              child: SignUpButton(),
+                            ),
+                          ),
+                          delay: delayedAmount + 5000,
+                        ),
+                      ],
+                    )
+
+                  ],
+                ),
+              )
+          ),
+        ));
   }
+
 
   void _onTapDown(TapDownDetails details) {
     _controller.forward();
@@ -53,81 +157,14 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   void _onTapUp(TapUpDetails details) {
     _controller.reverse();
   }
+
+
+
 }
 
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      body: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-          ),
 
-          child: Center(
-            child: ListView(
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    SizedBox(height: 200.0),
-                    SizedBox(
-                      height: 155.0,
-                      child: Image.asset(
-                        "assets/images/gattai_logo.png",
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                    SizedBox(height: 400.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            OutlineButton(
-                              child: Text("Login"),
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
-                              },
-                              shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(4.0)),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.max,
-                          // mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            FlatButton(
-                                color: Colors.black,
-                                textColor: Colors.white,
-                                child: Text("Register"),
-                                onPressed: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()));
-                                },
-                                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(4.0))
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                  ],
-                )
 
-              ],
-            ),
-          )
-      ),
-    );
-  }
-}
+
 
 
 

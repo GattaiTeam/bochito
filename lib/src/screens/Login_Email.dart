@@ -1,12 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gattai/src/screens/LoginPinScreen.dart';
+import 'package:gattai/src/screens/Login_Pin.dart';
 
-class LoginScreen extends StatelessWidget{
+class LoginEmail extends StatelessWidget{
+  final _formKey = GlobalKey<FormState>();
   final emailField = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
+    submit () {
+      print(emailField.text);
+      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPinScreen()));
+    }
+
     return Scaffold(
         resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
@@ -28,6 +35,7 @@ class LoginScreen extends StatelessWidget{
                 height: 40.0,
               ),
               Form(
+                key: _formKey,
                 child: Column(
                   children: <Widget>[
                     TextFormField(
@@ -39,10 +47,11 @@ class LoginScreen extends StatelessWidget{
                         labelText: 'Email',
                       ),
                       autofocus: true,
-                      onEditingComplete: () {
-                        print(emailField.text);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPinScreen()));
-                      },
+                      onEditingComplete: () { submit(); },
+                    ),
+                    RaisedButton(
+                      onPressed: () { submit(); },
+                      child: Text('Continue'),
                     ),
                   ],
                 ),

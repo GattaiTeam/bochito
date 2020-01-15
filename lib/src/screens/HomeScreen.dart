@@ -6,6 +6,28 @@ class HomeScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
+    void _showDialog() {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          // return object of type Dialog
+          return AlertDialog(
+            title: new Text("Gattai"),
+            content: new Text("This functionality is currently under development"),
+            actions: <Widget>[
+              new FlatButton(
+                child: new Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+
     return Scaffold(
         resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
@@ -37,9 +59,7 @@ class HomeScreen extends StatelessWidget{
                 SizedBox( height: 24.0 ),
                 OutlineButton(
                   child: Text("View profile"),
-                  onPressed: () {
-                    print("TODO Build Profile Page");
-                  },
+                  onPressed: () { _showDialog(); },
                   shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(4.0)),
                 ),
               ],

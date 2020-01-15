@@ -5,10 +5,14 @@ import 'package:gattai/src/screens/HomeScreen.dart';
 
 
 class LoginPinScreen extends StatelessWidget{
-  final emailField = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
+    void submit () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    }
+
     return Scaffold(
         resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
@@ -32,11 +36,12 @@ class LoginPinScreen extends StatelessWidget{
               PinPut(
                 fieldsCount: 4,
                 isTextObscure: true,
-                onSubmit: (pin) {
-                  print("Entered pin: " + pin);
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-                },
-              )
+                onSubmit: (pin) { submit(); },
+              ),
+              RaisedButton(
+                onPressed: () { submit(); },
+                child: Text('Continue'),
+              ),
             ],
           ),
         )
