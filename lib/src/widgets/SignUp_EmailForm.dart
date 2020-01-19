@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gattai/src/screens/SignUp_CountrySelection_Screen.dart';
+import 'package:gattai/src/helpers/validator.dart';
 
 class EmailForm extends StatefulWidget{
   @override
@@ -22,6 +23,7 @@ class EmailFormState extends State<EmailForm>{
           Container(
             width: 320.0,
             child: TextFormField(
+              autofocus: true,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 fillColor: Colors.white,
@@ -34,7 +36,7 @@ class EmailFormState extends State<EmailForm>{
                 ),
                 contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0)),
               validator: (value){
-                return validateEmail(value);
+                return validator(value, 'email');
               }
               ,
             ),
@@ -70,21 +72,6 @@ class EmailFormState extends State<EmailForm>{
       )
     );
   }
-  
-  validateEmail(email){
-
-    if (email.isEmpty) {
-      return "Please enter your email";
-    }
-    bool validEmail = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email);
-    if (validEmail){
-      return null; // Returns that the form is valid, null is used so nothing is displayed on the tooltip
-    }
-    return "Please enter a valid email";
-  }
-      
-  
-  
 }
 
 
