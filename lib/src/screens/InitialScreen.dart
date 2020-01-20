@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
 
-    const primaryColorBar = const Color(0xFF717DBC);
+    const primaryColorBar = const Color(0xff6055cd);
 
     final color = Colors.white;
     _scale = 1 - _controller.value;
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
               height: 50,
               minWidth: 200,
               textTheme: ButtonTextTheme.primary,
-              buttonColor: Color(0xFF717DBC),
+              buttonColor: Color(0xff695bcf),
               shape: RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(18.0),
                 side: BorderSide(color: Colors.indigo),

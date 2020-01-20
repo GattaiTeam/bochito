@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gattai/src/screens/SignUp_CountrySelection_Screen.dart';
+import 'package:gattai/src/screens/SignUpFlow/SignUp_CountrySelection_Screen.dart';
 import 'package:gattai/src/helpers/validator.dart';
 
 class EmailForm extends StatefulWidget{
@@ -16,14 +16,15 @@ class EmailFormState extends State<EmailForm>{
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Form(
       key: _formKey,
       child: Column(
         children: <Widget>[
           Container(
-            width: 320.0,
+            width: size.width * 0.8,
             child: TextFormField(
-              autofocus: true,
+              autofocus: false,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 fillColor: Colors.white,
@@ -45,28 +46,24 @@ class EmailFormState extends State<EmailForm>{
             height: 15.0,
           ),
           Container(
-            height: 50.0,
-            width: 200.0,
-            child:           RaisedButton(
-              color: Color(0xFF717DBC),
-              textTheme: ButtonTextTheme.primary,
-              shape: RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(18.0),
-                side: BorderSide(color: Colors.indigo),
+            height: 70.0,
+            width: size.width * 0.8,
+            child: Align(
+                alignment: Alignment.bottomRight,
+                child: FloatingActionButton(
+                    splashColor: Colors.indigoAccent,
 
-              ),
-              onPressed: (){
-                if (_formKey.currentState.validate()){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpCountry()));
-                }
-              },
-              child: Text('Next',
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.white
-              ),),
+                    backgroundColor: Color(0xff6055cd),
+                    onPressed: (){
+                      if (_formKey.currentState.validate()){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpCountry()));
+                      }
+                    },
+                    child: Icon(Icons.arrow_forward)
+                )
+              )
             ),
-          )
+
 
         ],
       )
