@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gattai/src/screens/SignUpFlow/SignUp_EIDProvider.dart';
+import 'package:gattai/src/screens/SignUpFlow/SignUp_AuthenticationSelection.dart';
 import 'package:gattai/src/widgets/SignUp_CountrySelector.dart';
 
 class SignUpCountry extends StatelessWidget{
@@ -60,7 +60,7 @@ class SignUpCountry extends StatelessWidget{
 
                     child:  RaisedButton(
                       onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpEIDProvider()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpAuthenticationSelection()));
 
                       },
                       child: Text('Next',
