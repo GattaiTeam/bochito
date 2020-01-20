@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gattai/src/screens/Login_Email.dart';
+import 'package:gattai/src/screens/LogInFlow/Login_Email.dart';
 
 class LogInButton extends StatelessWidget {
   @override

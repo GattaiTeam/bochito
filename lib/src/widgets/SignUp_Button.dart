@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:gattai/src/screens/SignUp_Email_Screen.dart';
+import 'package:gattai/src/screens/SignUpFlow/SignUp_Email_Screen.dart';
 
 
 class SignUpButton extends StatelessWidget {

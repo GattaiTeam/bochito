@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gattai/src/screens/SignUp_CountrySelection_Screen.dart';
+import 'package:gattai/src/screens/SignUpFlow/SignUp_CountrySelection_Screen.dart';
 import 'package:gattai/src/helpers/validator.dart';
 
 class EmailForm extends StatefulWidget{
@@ -23,7 +23,7 @@ class EmailFormState extends State<EmailForm>{
           Container(
             width: 320.0,
             child: TextFormField(
-              autofocus: true,
+              autofocus: false,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 fillColor: Colors.white,
