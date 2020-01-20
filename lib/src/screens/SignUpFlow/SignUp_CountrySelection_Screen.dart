@@ -6,6 +6,7 @@ import 'package:gattai/src/widgets/SignUp_CountrySelector.dart';
 class SignUpCountry extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -55,21 +56,21 @@ class SignUpCountry extends StatelessWidget{
                     height: 70.0,
                   ),
                   Container(
-                    height: 50.0,
-                    width: 200.0,
+                      height: 70.0,
+                      width: size.width * 0.8,
+                      child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: FloatingActionButton(
+                              splashColor: Colors.indigoAccent,
 
-                    child:  RaisedButton(
-                      onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpAuthenticationSelection()));
-
-                      },
-                      child: Text('Next',
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.white
-                        ),),
-                    ),
-                  )
+                              backgroundColor: Color(0xff6055cd),
+                              onPressed: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpAuthenticationSelection()));
+                              },
+                              child: Icon(Icons.arrow_forward)
+                          )
+                      )
+                  ),
                 ],
               ),
             ],
