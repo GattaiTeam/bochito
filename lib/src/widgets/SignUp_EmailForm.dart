@@ -16,12 +16,13 @@ class EmailFormState extends State<EmailForm>{
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Form(
       key: _formKey,
       child: Column(
         children: <Widget>[
           Container(
-            width: 320.0,
+            width: size.width * 0.8,
             child: TextFormField(
               autofocus: false,
               keyboardType: TextInputType.emailAddress,
@@ -45,21 +46,24 @@ class EmailFormState extends State<EmailForm>{
             height: 15.0,
           ),
           Container(
-            height: 50.0,
-            width: 200.0,
-            child: RaisedButton(
-              onPressed: (){
-                if (_formKey.currentState.validate()){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpCountry()));
-                }
-              },
-              child: Text('Next',
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.white
-              ),),
+            height: 70.0,
+            width: size.width * 0.8,
+            child: Align(
+                alignment: Alignment.bottomRight,
+                child: FloatingActionButton(
+                    splashColor: Colors.indigoAccent,
+
+                    backgroundColor: Color(0xff6055cd),
+                    onPressed: (){
+                      if (_formKey.currentState.validate()){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpCountry()));
+                      }
+                    },
+                    child: Icon(Icons.arrow_forward)
+                )
+              )
             ),
-          )
+
 
         ],
       )

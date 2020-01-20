@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
 
-    const primaryColorBar = const Color(0xff695bcf);
+    const primaryColorBar = const Color(0xff6055cd);
 
     final color = Colors.white;
     _scale = 1 - _controller.value;

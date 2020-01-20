@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gattai/src/screens/HomeScreen.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
 
@@ -56,7 +57,7 @@ class Pin2Screen extends StatelessWidget{
 
                 ),
                 onPressed: (){
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                 },
                 child: Text('Next',
                   style: TextStyle(

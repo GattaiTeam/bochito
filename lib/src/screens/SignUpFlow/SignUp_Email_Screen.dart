@@ -10,7 +10,7 @@ class SignUpEmail extends StatelessWidget{
       resizeToAvoidBottomPadding: true,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Center(child: Text("Let's get started!")),
+        title: Center(child: Text("")),
       ),
 
       body: Stack(
@@ -18,7 +18,7 @@ class SignUpEmail extends StatelessWidget{
 
           Center(
             child: new Image.asset(
-                'assets/images/EmailBackground.png',
+                'assets/images/GattaiBackground_withLogo.png',
                 width: size.width,
                 height: size.height,
                 fit: BoxFit.fill,),
@@ -29,7 +29,7 @@ class SignUpEmail extends StatelessWidget{
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                    height: size.height/4,
+                    height: size.height/3,
                   ),
                   EmailForm(),
                 ],
