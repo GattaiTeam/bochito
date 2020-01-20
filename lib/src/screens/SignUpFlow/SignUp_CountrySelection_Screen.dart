@@ -59,13 +59,6 @@ class SignUpCountry extends StatelessWidget{
                     width: 200.0,
 
                     child:  RaisedButton(
-                      color: Color(0xFF717DBC),
-                      textTheme: ButtonTextTheme.primary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(18.0),
-                        side: BorderSide(color: Colors.indigo),
-
-                      ),
                       onPressed: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpEIDProvider()));
 
