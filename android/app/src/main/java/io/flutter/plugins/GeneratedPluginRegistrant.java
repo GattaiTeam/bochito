@@ -2,6 +2,7 @@ package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
 import rocks.biessek.fluttercountrypicker.FlutterCountryPickerPlugin;
+import com.sahdeepsingh.liquid_swipe.LiquidSwipePlugin;
 
 /**
  * Generated file. Do not edit.
@@ -12,6 +13,7 @@ public final class GeneratedPluginRegistrant {
       return;
     }
     FlutterCountryPickerPlugin.registerWith(registry.registrarFor("rocks.biessek.fluttercountrypicker.FlutterCountryPickerPlugin"));
+    LiquidSwipePlugin.registerWith(registry.registrarFor("com.sahdeepsingh.liquid_swipe.LiquidSwipePlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {
