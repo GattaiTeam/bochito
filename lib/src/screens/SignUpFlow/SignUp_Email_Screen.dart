@@ -18,7 +18,7 @@ class SignUpEmail extends StatelessWidget{
 
           Center(
             child: new Image.asset(
-                'assets/images/Email_background.png',
+                'assets/images/EmailBackground.png',
                 width: size.width,
                 height: size.height,
                 fit: BoxFit.fill,),
