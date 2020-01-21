@@ -11,6 +11,7 @@ class SignUpEmail extends StatelessWidget{
       resizeToAvoidBottomPadding: true,
       backgroundColor: Colors.white,
       appBar: AppBar(
+        elevation: 0,
         title: Center(child: Text("")),
       ),
 
