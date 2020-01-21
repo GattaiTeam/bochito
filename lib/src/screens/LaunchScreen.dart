@@ -12,77 +12,7 @@ class MyApp extends StatelessWidget {
 
   final pages = [
     Container(
-      color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 120.0),
-            child: Image.asset('assets/images/gattai_logo.png'),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "Your only credential",
-                  style: AppTextStyles.headerGreyStyle,
-                ),
-                Text(
-                  "to access the world!",
-                  style: AppTextStyles.headerBoldStyle,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  "Temporibus autem aut\n"
-                      "officiis debitis aut rerum\n"
-                      "necessitatibus\n"
-                      "testseteststsets",
-                  style: AppTextStyles.descriptionGreyStyle,
-                ),
-                SizedBox(
-                  height: 40.0,
-                ),
-
-                Row(
-                  children: <Widget>[
-                    Container(
-                      height: 50,
-                      width: 150,
-                      child: LogInButtonLaunch()
-                    ),
-
-                    SizedBox(
-                      width: 20.0,
-                    ),
-                    Container(
-                      height: 50,
-                      width: 150,
-                      child: SignUpButtonLaunch()
-                    ),
-                  ],
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    ),
-    Container(
-      color: Colors.lightBlue,
+      color: GattaiColors.gattaiBackground,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,6 +65,76 @@ class MyApp extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 20.0,
+                ),
+
+                Row(
+                  children: <Widget>[
+                    Container(
+                        height: 50,
+                        width: 150,
+                        child: LogInButtonLaunch()
+                    ),
+
+                    SizedBox(
+                      width: 20.0,
+                    ),
+                    Container(
+                        height: 50,
+                        width: 150,
+                        child: SignUpButtonLaunch()
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    ),
+    Container(
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 120.0),
+            child: Image.asset('assets/images/gattai_logo.png'),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Your only credential",
+                  style: AppTextStyles.headerGreyStyle,
+                ),
+                Text(
+                  "to access the world!",
+                  style: AppTextStyles.headerBoldStyle,
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  "Temporibus autem aut\n"
+                      "officiis debitis aut rerum\n"
+                      "necessitatibus\n"
+                      "testseteststsets",
+                  style: AppTextStyles.descriptionGreyStyle,
+                ),
+                SizedBox(
+                  height: 40.0,
                 ),
 
                 Row(

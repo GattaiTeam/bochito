@@ -31,6 +31,7 @@ class AppTextStyles{
 
 class GattaiColors{
   static const gattaiBackground = const Color(0xff6055cd);
+
 }
 
 
