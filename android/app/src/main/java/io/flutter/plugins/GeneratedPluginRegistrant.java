@@ -2,6 +2,8 @@ package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
 import rocks.biessek.fluttercountrypicker.FlutterCountryPickerPlugin;
+import io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin;
+import io.flutter.plugins.imagepicker.ImagePickerPlugin;
 import com.sahdeepsingh.liquid_swipe.LiquidSwipePlugin;
 
 /**
@@ -13,6 +15,8 @@ public final class GeneratedPluginRegistrant {
       return;
     }
     FlutterCountryPickerPlugin.registerWith(registry.registrarFor("rocks.biessek.fluttercountrypicker.FlutterCountryPickerPlugin"));
+    FlutterAndroidLifecyclePlugin.registerWith(registry.registrarFor("io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin"));
+    ImagePickerPlugin.registerWith(registry.registrarFor("io.flutter.plugins.imagepicker.ImagePickerPlugin"));
     LiquidSwipePlugin.registerWith(registry.registrarFor("com.sahdeepsingh.liquid_swipe.LiquidSwipePlugin"));
   }
 
