@@ -16,6 +16,15 @@ class EmailFormState extends State<EmailForm>{
 
   @override
   Widget build(BuildContext context) {
+
+    submit(){
+      if (_formKey.currentState.validate()){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpCountry()));
+      }
+    }
+
+
+
     Size size = MediaQuery.of(context).size;
     return Form(
       key: _formKey,
@@ -39,8 +48,9 @@ class EmailFormState extends State<EmailForm>{
               validator: (value){
                 return validator(value, 'email');
               }
+
               ,
-            ),
+            onEditingComplete: () { submit(); },),
           ),
           SizedBox(
             height: 15.0,
@@ -55,9 +65,7 @@ class EmailFormState extends State<EmailForm>{
 
                     backgroundColor: Color(0xff6055cd),
                     onPressed: (){
-                      if (_formKey.currentState.validate()){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpCountry()));
-                      }
+                      submit();
                     },
                     child: Icon(Icons.arrow_forward)
                 )
