@@ -25,13 +25,22 @@ class AppTextStyles{
     fontSize: 20.0,
     fontFamily: "Product Sans",
   );
+
+  static const TextStyle progressStyle = TextStyle(
+    color: Colors.black,
+    fontSize: 22.0,
+    fontFamily: "Montserrat",
+  );
+
+
 }
 
 
 
 class GattaiColors{
   static const gattaiBackground = const Color(0xff6055cd);
-
+  static const buttonBackground_green = const Color(0xff8cc63e);
+  static const buttonBackground_yellow = const Color(0xffe3c420);
 }
 
 
