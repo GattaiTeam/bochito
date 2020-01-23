@@ -26,8 +26,8 @@ class _SignUpTakePictureState extends State<SignUpTakePicture>{
     return Alert(
       context: context,
       type: AlertType.none,
-      title: "RFLUTTER ALERT",
-      desc: "Flutter is more awesome with RFlutter Alert.",
+      title: "Please select a method",
+      desc: "",
       buttons: [
         DialogButton(
           child: Text(
