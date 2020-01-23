@@ -6,10 +6,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gattai/src/helpers/styles.dart';
 import 'package:gattai/src/screens/SignUpFlow/PinScreen.dart';
-import 'package:gattai/src/screens/SignUpFlow/SignUp_AuthenticationSelection.dart';
 import 'package:gattai/src/widgets/SignUp_CountrySelector.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:imagebutton/imagebutton.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 
@@ -100,7 +100,57 @@ class _SignUpTakePictureState extends State<SignUpTakePicture>{
   }
 
 
+  _showProgressDialog(BuildContext context){
+    ProgressDialog pr = new ProgressDialog(context,type: ProgressDialogType.Normal);
+    double percentage = 0.0;
+    pr.style(message: 'Showing some progress...');
 
+    pr.style(
+      message: 'Please wait...',
+      borderRadius: 8.0,
+      backgroundColor: Colors.white,
+      progressWidget: CircularProgressIndicator(),
+      elevation: 30.0,
+      insetAnimCurve: Curves.bounceIn,
+      progressTextStyle: TextStyle(
+          color: Colors.black, fontSize: 12.0, fontWeight: FontWeight.w400),
+      messageTextStyle: AppTextStyles.progressStyle
+
+    );
+
+
+    pr.show();
+
+
+    Future.delayed(Duration(seconds: 2)).then((onvalue) {
+      percentage = percentage + 30.0;
+      print(percentage);
+
+      pr.update(
+        progress: percentage,
+        message: "Please wait...",
+        progressWidget: Container(
+            padding: EdgeInsets.all(8.0), child: CircularProgressIndicator()),
+        maxProgress: 100.0,
+
+      );
+
+      Future.delayed(Duration(seconds: 3)).then((value) {
+        percentage = percentage + 15.0;
+        pr.update(
+            progress: percentage, message: "Our dog is sniffing your documents ...");
+        Future.delayed(Duration(seconds: 3)).then((value) {
+          percentage = percentage + 15.0;
+          pr.update(progress: percentage, message: "A band of bears just invaded us, hold on");
+          Future.delayed(Duration(seconds: 3)).then((value) {
+            pr.hide();
+            percentage = 0.0;
+            Navigator.push(context, MaterialPageRoute(builder: (context) => PinScreen()));
+          });
+        });
+      });
+    });
+  }
 
 
   @override
@@ -190,7 +240,7 @@ class _SignUpTakePictureState extends State<SignUpTakePicture>{
 
                           backgroundColor: GattaiColors.gattaiBackground,
                           onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => PinScreen()));
+                            _showProgressDialog(context);
                           },
                           child: Icon(Icons.arrow_forward)
                       ),
@@ -203,6 +253,8 @@ class _SignUpTakePictureState extends State<SignUpTakePicture>{
             ])
     );
   }
+
+
 
 
 }

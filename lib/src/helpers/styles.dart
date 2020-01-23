@@ -25,6 +25,14 @@ class AppTextStyles{
     fontSize: 20.0,
     fontFamily: "Product Sans",
   );
+
+  static const TextStyle progressStyle = TextStyle(
+    color: Colors.black,
+    fontSize: 22.0,
+    fontFamily: "Montserrat",
+  );
+
+
 }
 
 
