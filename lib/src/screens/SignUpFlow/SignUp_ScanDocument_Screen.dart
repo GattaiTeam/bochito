@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gattai/src/screens/SignUpFlow/PinScreen.dart';
+import 'package:gattai/src/screens/SignUpFlow/SignUp_TakePicture.dart';
 import 'package:imagebutton/imagebutton.dart';
 
 
@@ -49,7 +50,7 @@ class SignUpScanDocument extends StatelessWidget{
                     ),
                     unpressedImage: Image.asset("assets/images/Passport.png"),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => PinScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpTakePicture()));
                     },
                 ),
                     ImageButton(
