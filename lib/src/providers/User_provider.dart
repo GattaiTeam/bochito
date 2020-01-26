@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-class User with ChangeNotifier{
+class User{
 
   String _email = '';
+  String _pin = '';
 
   get email{
     return _email;
@@ -10,6 +11,13 @@ class User with ChangeNotifier{
 
   set email(String email){
     this._email = email;
-    notifyListeners();
+  }
+
+  get pin{
+    return _pin;
+  }
+
+  set pin(String pin){
+    this._pin = pin;
   }
 }
