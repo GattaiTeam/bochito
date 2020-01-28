@@ -5,6 +5,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gattai/src/helpers/styles.dart';
+import 'package:gattai/src/providers/User_provider.dart';
 import 'package:gattai/src/screens/SignUpFlow/PinScreen.dart';
 import 'package:gattai/src/widgets/SignUp_CountrySelector.dart';
 import 'package:image_picker/image_picker.dart';
@@ -14,13 +15,18 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 
 class SignUpTakePicture extends StatefulWidget{
-  _SignUpTakePictureState createState() => _SignUpTakePictureState();
+  User user;
+  SignUpTakePicture({Key key, @required this.user}) : super(key: key);
+  _SignUpTakePictureState createState() => _SignUpTakePictureState(user: user);
 }
 
 class _SignUpTakePictureState extends State<SignUpTakePicture>{
 
   File frontSideImage; // Used to keep track of the images that will be taken by the user
   File backSideImage;
+
+  User user;
+  _SignUpTakePictureState({Key key, @required this.user});
 
   _selectPictureMethod(BuildContext context, type){
     return Alert(
@@ -145,7 +151,7 @@ class _SignUpTakePictureState extends State<SignUpTakePicture>{
           Future.delayed(Duration(seconds: 3)).then((value) {
             pr.hide();
             percentage = 0.0;
-            Navigator.push(context, MaterialPageRoute(builder: (context) => PinScreen()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => PinScreen(user: user)));
           });
         });
       });

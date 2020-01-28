@@ -58,9 +58,8 @@ class MyApp extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  "Excepteur sint occaecat cupidatat\n"
-                      "non proident, sunt in\n"
-                      "culpa qui officia",
+                  "You are a few steps of becoming a\n"
+                      "world citizen by joining Gattai!\n",
                   style: AppTextStyles.descriptionWhiteStyle,
                 ),
                 SizedBox(

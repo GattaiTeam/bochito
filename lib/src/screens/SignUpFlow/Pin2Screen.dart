@@ -1,12 +1,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gattai/src/helpers/FirebaseAuth.dart';
+import 'package:gattai/src/providers/User_provider.dart';
 import 'package:gattai/src/screens/HomeScreen.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
 
 class Pin2Screen extends StatelessWidget{
+
+  User user;
+  Pin2Screen({Key key, @required this.user}) : super(key: key);
+
+
+  submit(context){
+    String email = user.email;
+    String password = user.pin + 'abcd';
+
+    try{
+      UserRepository user = UserRepository.instance();
+      user.registerWithEmailAndPassword(email, password);
+      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    }catch(e){
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    print (user.pin);
     return Scaffold(
         resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
@@ -49,15 +70,11 @@ class Pin2Screen extends StatelessWidget{
                     isTextObscure: true,
                   )),
               RaisedButton(
-                color: Color(0xFF717DBC),
-                textTheme: ButtonTextTheme.primary,
                 shape: RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(18.0),
-                  side: BorderSide(color: Colors.indigo),
-
                 ),
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                  submit(context);
                 },
                 child: Text('Next',
                   style: TextStyle(

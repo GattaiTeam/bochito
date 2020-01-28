@@ -1,16 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gattai/src/helpers/FirebaseAuth.dart';
+import 'package:gattai/src/providers/User_provider.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 import 'package:gattai/src/screens/HomeScreen.dart';
 
 
 class LoginPinScreen extends StatelessWidget{
+  User user;
+  LoginPinScreen({Key key, @required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     void submit () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      try{
+          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      }catch(e){
+        print(e);
+      }
+
     }
 
     return Scaffold(
@@ -36,7 +45,9 @@ class LoginPinScreen extends StatelessWidget{
               PinPut(
                 fieldsCount: 4,
                 isTextObscure: true,
-                onSubmit: (pin) { submit(); },
+                onSubmit: (pin) {
+                  submit();
+                  },
               ),
               RaisedButton(
                 onPressed: () { submit(); },

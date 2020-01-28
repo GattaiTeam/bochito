@@ -1,12 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gattai/src/helpers/styles.dart';
+import 'package:gattai/src/providers/User_provider.dart';
 import 'package:gattai/src/widgets/SignUp_EmailForm.dart';
 
 class SignUpEmail extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
+
+
+
+
     return Scaffold(
         resizeToAvoidBottomPadding: true,
         backgroundColor: GattaiColors.gattaiBackground,

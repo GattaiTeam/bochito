@@ -3,11 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:gattai/src/helpers/styles.dart';
 import 'package:gattai/src/screens/SignUpFlow/SignUp_AuthenticationSelection.dart';
 import 'package:gattai/src/widgets/SignUp_CountrySelector.dart';
+import 'package:gattai/src/providers/User_provider.dart';
 
 class SignUpCountry extends StatelessWidget{
   @override
+
+  User user;
+  SignUpCountry({Key key, @required this.user}) : super(key: key);
+
+
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return Scaffold(
         resizeToAvoidBottomPadding: true,
         backgroundColor: GattaiColors.gattaiBackground,
@@ -58,10 +65,10 @@ class SignUpCountry extends StatelessWidget{
                               image: DecorationImage(
                                   image: AssetImage('assets/images/country_pet.png'),
                                   fit: BoxFit.cover)),
-                          height: 160.0,
+                          height: 200.0,
                           width: 200.0,),),),
                     Positioned(
-                      top: 200.0,
+                      top: 270.0,
                       left: MediaQuery.of(context).size.width/6 ,
 
                       child: Column(
@@ -77,7 +84,7 @@ class SignUpCountry extends StatelessWidget{
                       ),
                     ),
                     Positioned(
-                      top: 230.0,
+                      top: 300.0,
                       left: MediaQuery.of(context).size.width/3.5,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +104,7 @@ class SignUpCountry extends StatelessWidget{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           SizedBox(
-                            height: MediaQuery.of(context).size.height/2,
+                            height: MediaQuery.of(context).size.height/1.75,
                           ),
                           CountrySelectionWidget(),
                         ],
@@ -105,14 +112,14 @@ class SignUpCountry extends StatelessWidget{
                     ),
 
                     Positioned(
-                      top: MediaQuery.of(context).size.height/1.5,
+                      top: MediaQuery.of(context).size.height/1.4,
                       left: (MediaQuery.of(context).size.width / 1.3),
                       child: FloatingActionButton(
                           splashColor: Colors.indigoAccent,
 
                           backgroundColor: GattaiColors.gattaiBackground,
                           onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpAuthenticationSelection()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpAuthenticationSelection(user:user)));
                           },
                           child: Icon(Icons.arrow_forward)
                       ),

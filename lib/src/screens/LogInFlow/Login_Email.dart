@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gattai/src/providers/User_provider.dart';
 import 'package:gattai/src/screens/LogInFlow/Login_Pin.dart';
 import 'package:gattai/src/helpers/validator.dart';
 
@@ -7,12 +8,14 @@ class LoginEmail extends StatelessWidget{
   final _formKey = GlobalKey<FormState>();
   final emailField = TextEditingController();
 
+  User user = new User();
+
   @override
   Widget build(BuildContext context) {
 
     submit () {
       if(_formKey.currentState.validate())
-        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPinScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPinScreen(user:user)));
     }
 
     return Scaffold(
@@ -48,7 +51,7 @@ class LoginEmail extends StatelessWidget{
                         labelText: 'Email',
                       ),
                       validator: (value){
-                        return validator(value, 'email');
+                        return validator_signup(value, 'email', user);
                       },
                       autofocus: true,
                       onEditingComplete: () { submit(); },

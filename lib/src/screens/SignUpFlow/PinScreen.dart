@@ -1,12 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gattai/src/providers/User_provider.dart';
 import 'package:gattai/src/screens/SignUpFlow/Pin2Screen.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
 
 class PinScreen extends StatelessWidget{
+
+  User user;
+  PinScreen({Key key, @required this.user}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    print(user.email);
     return Scaffold(
         resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
@@ -47,19 +53,18 @@ class PinScreen extends StatelessWidget{
                 child: PinPut(
                   fieldsCount: 4,
                   isTextObscure: true,
+                  onSubmit: (String pin){
+                    user.pin = pin;
+                  },
                 )),
 
 
               RaisedButton(
-                color: Color(0xFF717DBC),
-                textTheme: ButtonTextTheme.primary,
                 shape: RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(18.0),
-                  side: BorderSide(color: Colors.indigo),
-
                 ),
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Pin2Screen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Pin2Screen(user:user)));
                 },
                 child: Text('Next',
                   style: TextStyle(

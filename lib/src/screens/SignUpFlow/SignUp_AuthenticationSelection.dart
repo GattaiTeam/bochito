@@ -2,11 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gattai/src/screens/SignUpFlow/SignUp_ScanDocument_Screen.dart';
 import 'package:imagebutton/imagebutton.dart';
-
+import 'package:gattai/src/providers/User_provider.dart';
 
 
 class SignUpAuthenticationSelection extends StatelessWidget{
   @override
+  User user;
+  SignUpAuthenticationSelection({Key key, @required this.user}) : super(key: key);
+
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomPadding: false,
@@ -44,7 +47,7 @@ class SignUpAuthenticationSelection extends StatelessWidget{
                 ),
                 unpressedImage: Image.asset("assets/images/ScanDocument.png"),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScanDocument()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScanDocument(user: user)));
                 },
               ),
 

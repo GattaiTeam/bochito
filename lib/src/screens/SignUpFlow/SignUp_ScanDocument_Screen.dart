@@ -4,10 +4,13 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gattai/src/screens/SignUpFlow/PinScreen.dart';
 import 'package:gattai/src/screens/SignUpFlow/SignUp_TakePicture.dart';
 import 'package:imagebutton/imagebutton.dart';
-
+import 'package:gattai/src/providers/User_provider.dart';
 
 class SignUpScanDocument extends StatelessWidget{
   @override
+  User user;
+  SignUpScanDocument({Key key, @required this.user}) : super(key: key);
+
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
@@ -50,7 +53,7 @@ class SignUpScanDocument extends StatelessWidget{
                     ),
                     unpressedImage: Image.asset("assets/images/Passport.png"),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpTakePicture()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpTakePicture(user: user)));
                     },
                 ),
                     ImageButton(
@@ -62,7 +65,7 @@ class SignUpScanDocument extends StatelessWidget{
                       ),
                       unpressedImage: Image.asset("assets/images/IDCard.png"),
                       onTap: () {
-                        print('test');
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpTakePicture(user: user)));;
                       },
                     ),
 
@@ -75,7 +78,7 @@ class SignUpScanDocument extends StatelessWidget{
                       ),
                       unpressedImage: Image.asset("assets/images/Mobile.png"),
                       onTap: () {
-                        print('test');
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpTakePicture(user: user)));
                       },
                     ),
 
@@ -89,7 +92,7 @@ class SignUpScanDocument extends StatelessWidget{
                       ),
                       unpressedImage: Image.asset("assets/images/Other.png"),
                       onTap: () {
-                        print('test');
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpTakePicture(user: user)));
                       },
                     ),
 
