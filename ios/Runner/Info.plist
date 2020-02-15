@@ -7,7 +7,7 @@
     <key>NSCameraUsageDescription</key>
     <string>Gattai requires access to the camera in order to scan your documents</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>Gattai requires access to your microphone to record videos</key>
+    <string>Gattai requires access to your microphone to record videos</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
